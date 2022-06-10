@@ -5,10 +5,7 @@ Console.Write("------------------\nВведите трехзначное чис�
 int inputTask10 = Convert.ToInt32(Console.ReadLine());
 string resultTask10 = "Вы ввели не трёхзначное число!";
 
-if (inputTask10 < 0)
-{
-    inputTask10 *= -1;
-}
+inputTask10 = ModuleOfNum(inputTask10);
 if (inputTask10 < 999 && inputTask10 > 100) 
 {
     resultTask10 = Convert.ToString(inputTask10 % 100 / 10);
@@ -22,10 +19,7 @@ Console.Write("------------------\nВведите число: ");
 int inputTask13 = Convert.ToInt32(Console.ReadLine());
 string resultTask13 = "Третьей цифры нет!";
 
-if (inputTask13 < 0)
-{
-inputTask13 *= -1;
-}
+inputTask13 = ModuleOfNum(inputTask13);
 if (inputTask13 > 100) 
 {
     while ( inputTask13 > 999)
@@ -71,3 +65,13 @@ if (firstNum * firstNum == secondNum || secondNum * secondNum == firstNum)
     outputTask16 = "Да";
 }
 Console.WriteLine(outputTask16);
+
+
+int ModuleOfNum(int num)
+{
+    if (num < 0)
+    {
+        num *= -1;
+    }
+    return num;
+}
