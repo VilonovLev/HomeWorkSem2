@@ -36,17 +36,13 @@ Console.WriteLine(resultTask13);
 
 Console.Write("------------------\nВведите номер дня недели: ");
 int dayOfWeek = Convert.ToInt32(Console.ReadLine());
-string output;
+string output = "Вы ввели не день недели!";
 
-if ( dayOfWeek > 7 || dayOfWeek < 1)
-{
-    output = "Вы ввели не день недели!";
-}
-else if (dayOfWeek != 6 && dayOfWeek != 7)
+if (dayOfWeek < 6 && dayOfWeek > 0)
 {
     output = "Нет";
 }
-else
+if (dayOfWeek < 8 && dayOfWeek > 5)
 {
     output = "Да";
 }
@@ -60,7 +56,7 @@ int firstNum = Convert.ToInt32(Console.ReadLine());
 int secondNum = Convert.ToInt32(Console.ReadLine());
 string outputTask16 = "Нет"; 
 
-if (firstNum * firstNum == secondNum || secondNum * secondNum == firstNum)
+if (SquareOrNo(firstNum,secondNum))
 {
     outputTask16 = "Да";
 }
@@ -74,4 +70,16 @@ int ModuleOfNum(int num)
         num *= -1;
     }
     return num;
+}
+
+bool SquareOrNo (int a , int b) 
+{
+    if (firstNum * firstNum == secondNum || secondNum * secondNum == firstNum)
+    {
+        return true;
+    }
+    else 
+    {
+        return false;
+    }
 }
